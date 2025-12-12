@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Físico & Data Scientist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="logo">&lt;Física_Code /&gt;</div>
+        <div class="nav-links">
+            <a href="#home">Inicio</a>
+            <a href="#stack">Tecnologías</a>
+            <a href="#projects">Proyectos</a>
+            <a href="https://github.com/NoeCB" target="_blank" class="btn-github">
+                <i class="fab fa-github"></i> Mi GitHub
+            </a>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">Junior Developer</span>
+            <h1>Hola, soy <span class="highlight">Noelia Cantador</span></h1>
+            <h2>Física Aplicada & Data Science</h2>
+            <p>
+                Combino la capacidad analítica de la física con la eficiencia de la programación. 
+                Especializada en modelado matemático, Python y R.
+            </p>
+            
+            <div class="math-display">
+                $$ \frac{d\vec{x}}{dt} = \sigma (y - x), \quad \frac{d\vec{y}}{dt} = x (\rho - z) - y $$
+            </div>
+
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+                <a href="#contact" class="btn btn-outline">Contactar</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="stack" class="container">
+        <h3 class="section-title">Stack Científico & Desarrollo</h3>
+        <div class="cards-grid">
+            <div class="card tech-card">
+                <i class="fab fa-python icon"></i>
+                <h4>Python</h4>
+                <p>Lenguaje principal para scripting y backend.</p>
+            </div>
+            
+            <div class="card tech-card">
+                <i class="fab fa-r-project icon"></i>
+                <h4>R Language</h4>
+                <p>Análisis estadístico avanzado y visualización con ggplot2.</p>
+            </div>
+
+            <div class="card tech-card">
+                <i class="fas fa-cube icon"></i>
+                <h4>NumPy</h4>
+                <p>Cálculo matricial y álgebra lineal de alto rendimiento.</p>
+            </div>
+            <div class="card tech-card">
+                <i class="fas fa-table icon"></i>
+                <h4>Pandas</h4>
+                <p>Limpieza, manipulación y análisis de Datasets.</p>
+            </div>
+            <div class="card tech-card">
+                <i class="fas fa-flask icon"></i>
+                <h4>SciPy</h4>
+                <p>Optimización, integración y algoritmos científicos.</p>
+            </div>
+        </div>
+    </section>
+
+   <section id="projects" class="container">
+        <h3 class="section-title">Proyectos Destacados</h3>
+        <div class="cards-grid">
+            
+            <article class="card project-card">
+                <div class="project-header">
+                    <i class="fas fa-infinity"></i> 
+                    <h4>Caos: Péndulo Doble</h4>
+                </div>
+                <p>Simulación del movimiento caótico resolviendo ecuaciones diferenciales acopladas (Lagrangianas) con <strong>SciPy</strong>.</p>
+                <div class="tags">
+                    <span>Python</span><span>ODEint</span><span>Animation</span>
+                </div>
+                <a href="https://github.com/NoeCB/pendulum-system.git" target="_blank" class="project-link">
+                    Ver Código <i class="fas fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="card project-card">
+                <div class="project-header">
+                    <i class="fas fa-wind"></i> 
+                    <h4>Atractor de Lorenz</h4>
+                </div>
+                <p>Modelado de sistemas dinámicos atmosféricos y visualización de trayectorias de fase en 3D usando <strong>Matplotlib</strong>.</p>
+                <div class="tags">
+                    <span>NumPy</span><span>3D Plotting</span><span>Chaos</span>
+                </div>
+                <a href="https://github.com/NoeCB/Lorenz-system.git" target="_blank" class="project-link">
+                    Ver Código <i class="fas fa-arrow-right"></i>
+                </a>
+            </article>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <h3>¿Hablamos?</h3>
+            <p>Busco oportunidades como Python/R Junior Developer o Data Analyst.</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/NoeCB" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/noelia-cb" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:noe2900@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 - Desarrollado con lógica y código.</p>
+        </div>
+        
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+
+        // Ajustar tamaño del canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Manejar redimensionamiento
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+
+        // Clase Partícula
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.directionX = (Math.random() * 0.4) - 0.2; // Velocidad Lenta
+                this.directionY = (Math.random() * 0.4) - 0.2;
+                this.size = Math.random() * 2 + 1; // Tamaño aleatorio
+                this.color = '#38bdf8'; // Color CIAN (tu acento)
+            }
+
+            // Método para dibujar
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = 0.6; // Transparencia
+                ctx.fill();
+            }
+
+            // Método para mover
+            update() {
+                // Rebotar en los bordes
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        // Crear array de partículas
+        function init() {
+            particlesArray = [];
+            // Número de partículas basado en el tamaño de pantalla
+            let numberOfParticles = (canvas.height * canvas.width) / 15000; 
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        // Conectar puntos cercanos (Estilo Red Neuronal / Átomos)
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
+                                   ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    
+                    // Si están cerca, dibujar línea
+                    if (distance < (canvas.width/7) * (canvas.height/7)) {
+                        opacityValue = 1 - (distance / 20000);
+                        ctx.strokeStyle = 'rgba(56, 189, 248,' + opacityValue + ')'; // Color línea CIAN
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // Bucle de animación
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        // Iniciar
+        init();
+        animate();
+    </script>
+</body>
+</html>
