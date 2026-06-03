@@ -3,229 +3,602 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Físico & Data Scientist</title>
+    <title>Noelia Cantador | Portfolio Profesional</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
+    <!-- Fondo de partículas interactivas -->
     <canvas id="bg-canvas"></canvas>
 
+    <!-- Barra de navegación -->
     <nav class="navbar">
-        <div class="logo">&lt;Física_Code /&gt;</div>
+        <div class="logo">Noelia Cantador</div>
         <div class="nav-links">
             <a href="#home">Inicio</a>
             <a href="#stack">Tecnologías</a>
             <a href="#projects">Proyectos</a>
             <a href="https://github.com/NoeCB" target="_blank" class="btn-github">
-                <i class="fab fa-github"></i> Mi GitHub
+                <i class="fab fa-github"></i> GitHub
             </a>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header id="home" class="hero">
         <div class="hero-content">
-            <span class="badge">Junior Developer</span>
-            <h1>Hola, soy <span class="highlight">Noelia Cantador</span></h1>
-            <h2>Física Aplicada & Data Science</h2>
+            <span class="badge">Física Aplicada & Data Scientist</span>
+            <h1><span class="highlight">Noelia Cantador</span></h1>
+            <h2>Resolviendo sistemas complejos mediante código</h2>
             <p>
-                Combino la capacidad analítica de la física con la eficiencia de la programación. 
-                Especializada en modelado matemático, Python y R.
+                Combino el rigor analítico de la física teórica con herramientas avanzadas de programación 
+                para simular sistemas dinámicos y modelar patrones complejos de datos. Especializada en Python y R.
             </p>
             
             <div class="math-display">
-                $$ \frac{d\vec{x}}{dt} = \sigma (y - x), \quad \frac{d\vec{y}}{dt} = x (\rho - z) - y $$
+                $$ \frac{d\vec{x}}{dt} = \sigma (y - x), \quad \frac{d\vec{y}}{dt} = x (\rho - z) - y, \quad \frac{d\vec{z}}{dt} = x y - \beta z $$
             </div>
 
             <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-                <a href="#contact" class="btn btn-outline">Contactar</a>
+                <a href="#projects" class="btn btn-primary">Explorar Proyectos</a>
+                <a href="#contact" class="btn btn-outline">Contacto</a>
             </div>
         </div>
     </header>
 
+    <!-- Stack Científico y Desarrollo (Carrusel Deslizante) -->
     <section id="stack" class="container">
-        <h3 class="section-title">Stack Científico & Desarrollo</h3>
-        <div class="cards-grid">
-            <div class="card tech-card">
-                <i class="fab fa-python icon"></i>
-                <h4>Python</h4>
-                <p>Lenguaje principal para scripting y backend.</p>
+        <h3 class="section-title">Stack Técnico & Competencias</h3>
+        
+        <div class="skills-carousel-wrapper">
+            <button class="carousel-btn prev-btn" id="skills-prev" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="skills-scroll-container" id="skills-scroll">
+                
+                <div class="card tech-card" data-glow>
+                    <i class="fab fa-python icon"></i>
+                    <h4>Python</h4>
+                    <p>Lenguaje principal para modelado matemático, simulación física y scripting general.</p>
+                </div>
+                
+                <div class="card tech-card" data-glow>
+                    <i class="fab fa-r-project icon"></i>
+                    <h4>R Language</h4>
+                    <p>Análisis estadístico avanzado, limpieza de datos y visualizaciones complejas mediante ggplot2.</p>
+                </div>
+
+                <div class="card tech-card" data-glow>
+                    <i class="fas fa-cube icon"></i>
+                    <h4>NumPy & SciPy</h4>
+                    <p>Cálculo matricial, álgebra lineal computacional y resolución de EDOs (Ecuaciones Diferenciales Ordinarias).</p>
+                </div>
+                
+                <div class="card tech-card" data-glow>
+                    <i class="fas fa-table icon"></i>
+                    <h4>Pandas</h4>
+                    <p>Manipulación, análisis de datos tabulares complejos y preparación de datasets estructurados.</p>
+                </div>
+                
+                <div class="card tech-card" data-glow>
+                    <i class="fas fa-project-diagram icon"></i>
+                    <h4>PyQt & GUIs</h4>
+                    <p>Creación de interfaces gráficas interactivas para visualización científica y control de variables en simulaciones.</p>
+                </div>
+                
+                <div class="card tech-card" data-glow>
+                    <i class="fas fa-database icon"></i>
+                    <h4>Bases de Datos</h4>
+                    <p>Diseño y consulta de bases de datos relacionales y no relacionales con SQL, MongoDB y Neo4j (grafos).</p>
+                </div>
+
+                <div class="card tech-card" data-glow>
+                    <i class="fab fa-java icon"></i>
+                    <h4>Java</h4>
+                    <p>Desarrollo de software robusto aplicando Programación Orientada a Objetos (POO).</p>
+                </div>
+
+                <div class="card tech-card" data-glow>
+                    <i class="fab fa-aws icon"></i>
+                    <h4>MLOps & AWS</h4>
+                    <p>Despliegue y ciclo de vida de modelos de Machine Learning. AWS Certified AI Practitioner.</p>
+                </div>
+                
             </div>
             
-            <div class="card tech-card">
-                <i class="fab fa-r-project icon"></i>
-                <h4>R Language</h4>
-                <p>Análisis estadístico avanzado y visualización con ggplot2.</p>
-            </div>
-
-            <div class="card tech-card">
-                <i class="fas fa-cube icon"></i>
-                <h4>NumPy</h4>
-                <p>Cálculo matricial y álgebra lineal de alto rendimiento.</p>
-            </div>
-            <div class="card tech-card">
-                <i class="fas fa-table icon"></i>
-                <h4>Pandas</h4>
-                <p>Limpieza, manipulación y análisis de Datasets.</p>
-            </div>
-            <div class="card tech-card">
-                <i class="fas fa-flask icon"></i>
-                <h4>SciPy</h4>
-                <p>Optimización, integración y algoritmos científicos.</p>
-            </div>
+            <button class="carousel-btn next-btn" id="skills-next" aria-label="Siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </section>
 
-   <section id="projects" class="container">
+    <!-- Proyectos Destacados -->
+    <section id="projects" class="container">
         <h3 class="section-title">Proyectos Destacados</h3>
         <div class="cards-grid">
             
-            <article class="card project-card">
-                <div class="project-header">
-                    <i class="fas fa-infinity"></i> 
-                    <h4>Caos: Péndulo Doble</h4>
+            <!-- Proyecto: Péndulo Doble -->
+            <article class="card project-card pendulum" data-glow>
+                <div class="project-top">
+                    <div class="project-meta">
+                        <span class="date-badge">2024</span>
+                    </div>
+                    <div class="project-header">
+                        <h4>Caos: Péndulo Doble</h4>
+                    </div>
+                    <p>Simulación numérica interactiva y resolución de EDOs acopladas (Lagrangianas) usando métodos numéricos en Python.</p>
                 </div>
-                <p>Simulación del movimiento caótico resolviendo ecuaciones diferenciales acopladas (Lagrangianas) con <strong>SciPy</strong>.</p>
+                
+                <!-- Simulación interactiva en Canvas -->
+                <div class="project-preview-container" id="container-pendulum">
+                    <canvas id="canvas-pendulum" class="project-canvas"></canvas>
+                    <div class="canvas-instructions">Pasa el cursor para excitar</div>
+                </div>
+
                 <div class="tags">
-                    <span>Python</span><span>ODEint</span><span>Animation</span>
+                    <span>Python</span><span>EDOs (Lagrangianas)</span><span>SciPy</span><span>Simulación Física</span>
                 </div>
-                <a href="https://github.com/NoeCB/pendulum-system.git" target="_blank" class="project-link">
-                    Ver Código <i class="fas fa-arrow-right"></i>
+                <a href="https://github.com/NoeCB/pendulum-system" target="_blank" class="project-link">
+                    Ver Repositorio <i class="fas fa-arrow-right"></i>
                 </a>
             </article>
 
-            <article class="card project-card">
-                <div class="project-header">
-                    <i class="fas fa-wind"></i> 
-                    <h4>Atractor de Lorenz</h4>
+            <!-- Proyecto: Atractor de Lorenz -->
+            <article class="card project-card lorenz" data-glow>
+                <div class="project-top">
+                    <div class="project-meta">
+                        <span class="date-badge">2021-2022 (Mejorado 2025)</span>
+                    </div>
+                    <div class="project-header">
+                        <h4>Atractor de Lorenz</h4>
+                    </div>
+                    <p>Modelado tridimensional de sistemas dinámicos caóticos atmosféricos. Creado originalmente en 2021-2022 y actualizado en 2025 para adaptarlo al cambio de sintaxis de PyQt5.</p>
                 </div>
-                <p>Modelado de sistemas dinámicos atmosféricos y visualización de trayectorias de fase en 3D usando <strong>Matplotlib</strong>.</p>
+                
+                <!-- Simulación interactiva en Canvas -->
+                <div class="project-preview-container" id="container-lorenz">
+                    <canvas id="canvas-lorenz" class="project-canvas"></canvas>
+                    <div class="canvas-instructions">Pasa el cursor para rotar</div>
+                </div>
+
                 <div class="tags">
-                    <span>NumPy</span><span>3D Plotting</span><span>Chaos</span>
+                    <span>PyQt5</span><span>Matplotlib 3D</span><span>Sistemas Caóticos</span><span>Python</span>
                 </div>
-                <a href="https://github.com/NoeCB/Lorenz-system.git" target="_blank" class="project-link">
-                    Ver Código <i class="fas fa-arrow-right"></i>
+                <a href="https://github.com/NoeCB/Lorenz-system" target="_blank" class="project-link">
+                    Ver Repositorio <i class="fas fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <!-- Proyecto: Dead by Daylight RPG -->
+            <article class="card project-card dbd" data-glow>
+                <div class="project-top">
+                    <div class="project-meta">
+                        <span class="date-badge">2026</span>
+                    </div>
+                    <div class="project-header">
+                        <h4>DBD Web RPG</h4>
+                    </div>
+                    <p>Juego de rol web inspirado en Dead by Daylight que demuestra conceptos avanzados de Programación Orientada a Objetos (POO), estructuración de clases, inventario, estados y lógica de combate/supervivencia.</p>
+                </div>
+                
+                <!-- Imagen mockup del juego -->
+                <div class="project-preview-container">
+                    <img src="assets/dbd_rpg_preview.png" alt="Dead by Daylight Web RPG" class="dbd-preview-img">
+                </div>
+
+                <div class="tags">
+                    <span>POO / OOP</span><span>Javascript</span><span>Lógica de Clases</span><span>Web RPG</span>
+                </div>
+                <a href="https://github.com/NoeCB/rpg-poo" target="_blank" class="project-link">
+                    Ver Repositorio <i class="fas fa-arrow-right"></i>
                 </a>
             </article>
 
         </div>
     </section>
 
+    <!-- Footer / Contacto -->
     <footer id="contact">
         <div class="container footer-content">
-            <h3>¿Hablamos?</h3>
-            <p>Busco oportunidades como Python/R Junior Developer o Data Analyst.</p>
+            <h3>¿Hablamos de Ciencia de Datos o Física?</h3>
+            <p>Busco oportunidades como Python/R Developer, Data Analyst o Junior Data Scientist.</p>
             
             <div class="social-links">
                 <a href="https://github.com/NoeCB" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/noelia-cb" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:noe2900@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="copyright">&copy; 2025 - Desarrollado con lógica y código.</p>
+            <p class="copyright">&copy; 2026 - Desarrollado por Noelia Cantador. Todos los derechos reservados.</p>
         </div>
-        
     </footer>
 
+    <!-- Script de Animaciones Interactivas -->
     <script>
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let particlesArray;
+        // --- 1. FONDO DE PARTÍCULAS INTERACTIVAS ---
+        const bgCanvas = document.getElementById('bg-canvas');
+        const bgCtx = bgCanvas.getContext('2d');
+        let particlesArray = [];
+        let mouseX = null;
+        let mouseY = null;
 
-        // Ajustar tamaño del canvas
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        function resizeBg() {
+            bgCanvas.width = window.innerWidth;
+            bgCanvas.height = window.innerHeight;
+            initBg();
+        }
 
-        // Manejar redimensionamiento
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init();
+        window.addEventListener('resize', resizeBg);
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.x;
+            mouseY = e.y;
+        });
+        window.addEventListener('mouseout', () => {
+            mouseX = null;
+            mouseY = null;
         });
 
-        // Clase Partícula
         class Particle {
             constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.directionX = (Math.random() * 0.4) - 0.2; // Velocidad Lenta
-                this.directionY = (Math.random() * 0.4) - 0.2;
-                this.size = Math.random() * 2 + 1; // Tamaño aleatorio
-                this.color = '#38bdf8'; // Color CIAN (tu acento)
+                this.x = Math.random() * bgCanvas.width;
+                this.y = Math.random() * bgCanvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.size = Math.random() * 2 + 0.8;
+                this.color = '#38bdf8';
             }
-
-            // Método para dibujar
             draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = this.color;
-                ctx.globalAlpha = 0.6; // Transparencia
-                ctx.fill();
+                bgCtx.beginPath();
+                bgCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                bgCtx.fillStyle = this.color;
+                bgCtx.globalAlpha = 0.25;
+                bgCtx.fill();
             }
-
-            // Método para mover
             update() {
-                // Rebotar en los bordes
-                if (this.x > canvas.width || this.x < 0) {
-                    this.directionX = -this.directionX;
-                }
-                if (this.y > canvas.height || this.y < 0) {
-                    this.directionY = -this.directionY;
-                }
-                this.x += this.directionX;
-                this.y += this.directionY;
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > bgCanvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > bgCanvas.height) this.vy *= -1;
                 this.draw();
             }
         }
 
-        // Crear array de partículas
-        function init() {
+        function initBg() {
             particlesArray = [];
-            // Número de partículas basado en el tamaño de pantalla
-            let numberOfParticles = (canvas.height * canvas.width) / 15000; 
-            for (let i = 0; i < numberOfParticles; i++) {
+            let particleDensity = (bgCanvas.width * bgCanvas.height) / 12000;
+            particleDensity = Math.min(particleDensity, 120); // Cap particles to prevent performance drops
+            for (let i = 0; i < particleDensity; i++) {
                 particlesArray.push(new Particle());
             }
         }
 
-        // Conectar puntos cercanos (Estilo Red Neuronal / Átomos)
-        function connect() {
-            let opacityValue = 1;
-            for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a; b < particlesArray.length; b++) {
-                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
-                                   ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                    
-                    // Si están cerca, dibujar línea
-                    if (distance < (canvas.width/7) * (canvas.height/7)) {
-                        opacityValue = 1 - (distance / 20000);
-                        ctx.strokeStyle = 'rgba(56, 189, 248,' + opacityValue + ')'; // Color línea CIAN
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
+        function animateBg() {
+            bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+            for (let p of particlesArray) {
+                p.update();
+            }
+            
+            // Connect points close to each other or close to the mouse
+            bgCtx.globalAlpha = 0.08;
+            bgCtx.strokeStyle = 'rgba(56, 189, 248, 0.5)';
+            bgCtx.lineWidth = 0.8;
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                for (let j = i + 1; j < particlesArray.length; j++) {
+                    let dx = particlesArray[i].x - particlesArray[j].x;
+                    let dy = particlesArray[i].y - particlesArray[j].y;
+                    let dist = dx*dx + dy*dy;
+                    if (dist < 15000) {
+                        bgCtx.beginPath();
+                        bgCtx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        bgCtx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        bgCtx.stroke();
+                    }
+                }
+                // Connect with mouse
+                if (mouseX !== null && mouseY !== null) {
+                    let mdx = particlesArray[i].x - mouseX;
+                    let mdy = particlesArray[i].y - mouseY;
+                    let mdist = mdx*mdx + mdy*mdy;
+                    if (mdist < 30000) {
+                        bgCtx.globalAlpha = (1 - mdist / 30000) * 0.15;
+                        bgCtx.strokeStyle = 'rgba(56, 189, 248, 0.8)';
+                        bgCtx.beginPath();
+                        bgCtx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        bgCtx.lineTo(mouseX, mouseY);
+                        bgCtx.stroke();
+                        bgCtx.globalAlpha = 0.08; // reset
                     }
                 }
             }
+            requestAnimationFrame(animateBg);
         }
 
-        // Bucle de animación
-        function animate() {
-            requestAnimationFrame(animate);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // --- 2. SIMULACIÓN INTERACTIVA: PÉNDULO DOBLE ---
+        const pendCanvas = document.getElementById('canvas-pendulum');
+        const pendCtx = pendCanvas.getContext('2d');
+        const pendContainer = document.getElementById('container-pendulum');
+
+        let p_g = 9.81;
+        let p_m1 = 12;
+        let p_m2 = 12;
+        let p_l1 = 55;
+        let p_l2 = 55;
+        let p_th1 = Math.PI / 2 + 0.3;
+        let p_th2 = Math.PI / 2 + 0.7;
+        let p_w1 = 0;
+        let p_w2 = 0;
+        let p_trail = [];
+        let p_hovered = false;
+
+        function resizePendulum() {
+            pendCanvas.width = pendContainer.clientWidth;
+            pendCanvas.height = pendContainer.clientHeight;
+        }
+
+        pendContainer.addEventListener('mouseenter', () => {
+            p_hovered = true;
+            // Kick the pendulum with torque on hover
+            p_w1 += (Math.random() - 0.5) * 4;
+            p_w2 += (Math.random() - 0.5) * 6;
+        });
+        pendContainer.addEventListener('mouseleave', () => p_hovered = false);
+
+        function updatePendulum() {
+            let dt = 0.15; 
             
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
+            // Equations of motion
+            let num1 = -p_g * (2 * p_m1 + p_m2) * Math.sin(p_th1) - p_m2 * p_g * Math.sin(p_th1 - 2 * p_th2) - 2 * Math.sin(p_th1 - p_th2) * p_m2 * (p_w2 * p_w2 * p_l2 + p_w1 * p_w1 * p_l1 * Math.cos(p_th1 - p_th2));
+            let den1 = p_l1 * (2 * p_m1 + p_m2 - p_m2 * Math.cos(2 * p_th1 - 2 * p_th2));
+            let a1_accel = num1 / den1;
+
+            let num2 = 2 * Math.sin(p_th1 - p_th2) * (p_w1 * p_w1 * p_l1 * (p_m1 + p_m2) + p_g * (p_m1 + p_m2) * Math.cos(p_th1) + p_w2 * p_w2 * p_l2 * p_m2 * Math.cos(p_th1 - p_th2));
+            let den2 = p_l2 * (2 * p_m1 + p_m2 - p_m2 * Math.cos(2 * p_th1 - 2 * p_th2));
+            let a2_accel = num2 / den2;
+
+            p_w1 += a1_accel * dt;
+            p_w2 += a2_accel * dt;
+            p_th1 += p_w1 * dt;
+            p_th2 += p_w2 * dt;
+
+            // Damping (Friction)
+            p_w1 *= 0.9995;
+            p_w2 *= 0.9995;
+
+            // Pendulum coordinate mapping
+            let cx = pendCanvas.width / 2;
+            let cy = pendCanvas.height / 3;
+
+            let x1 = cx + p_l1 * Math.sin(p_th1);
+            let y1 = cy + p_l1 * Math.cos(p_th1);
+            let x2 = x1 + p_l2 * Math.sin(p_th2);
+            let y2 = y1 + p_l2 * Math.cos(p_th2);
+
+            // Record trail
+            p_trail.push({x: x2, y: y2});
+            if (p_trail.length > 80) p_trail.shift();
+
+            // Clear & draw
+            pendCtx.fillStyle = 'rgba(2, 6, 23, 0.4)';
+            pendCtx.fillRect(0, 0, pendCanvas.width, pendCanvas.height);
+
+            // Draw glowing trail
+            if (p_trail.length > 1) {
+                pendCtx.shadowBlur = 10;
+                pendCtx.shadowColor = '#0ea5e9';
+                for (let i = 1; i < p_trail.length; i++) {
+                    let ratio = i / p_trail.length;
+                    pendCtx.strokeStyle = `rgba(14, 165, 233, ${ratio * 0.7})`;
+                    pendCtx.lineWidth = ratio * 2;
+                    pendCtx.beginPath();
+                    pendCtx.moveTo(p_trail[i - 1].x, p_trail[i - 1].y);
+                    pendCtx.lineTo(p_trail[i].x, p_trail[i].y);
+                    pendCtx.stroke();
+                }
+                pendCtx.shadowBlur = 0; // reset
             }
-            connect();
+
+            // Draw arms
+            pendCtx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            pendCtx.lineWidth = 2.5;
+            pendCtx.beginPath();
+            pendCtx.moveTo(cx, cy);
+            pendCtx.lineTo(x1, y1);
+            pendCtx.lineTo(x2, y2);
+            pendCtx.stroke();
+
+            // Draw hinge
+            pendCtx.fillStyle = '#64748b';
+            pendCtx.beginPath();
+            pendCtx.arc(cx, cy, 4, 0, Math.PI * 2);
+            pendCtx.fill();
+
+            // Draw bobs
+            pendCtx.shadowBlur = 8;
+            pendCtx.shadowColor = '#38bdf8';
+            pendCtx.fillStyle = '#f8fafc';
+            pendCtx.beginPath();
+            pendCtx.arc(x1, y1, 6, 0, Math.PI * 2);
+            pendCtx.fill();
+
+            pendCtx.fillStyle = '#0ea5e9';
+            pendCtx.beginPath();
+            pendCtx.arc(x2, y2, 8, 0, Math.PI * 2);
+            pendCtx.fill();
+            pendCtx.shadowBlur = 0; // reset
         }
 
-        // Iniciar
-        init();
-        animate();
+        function loopPendulum() {
+            updatePendulum();
+            requestAnimationFrame(loopPendulum);
+        }
+
+        // --- 3. SIMULACIÓN INTERACTIVA: ATRACTOR DE LORENZ ---
+        const lorenzCanvas = document.getElementById('canvas-lorenz');
+        const lorenzCtx = lorenzCanvas.getContext('2d');
+        const lorenzContainer = document.getElementById('container-lorenz');
+
+        let l_x = 0.1;
+        let l_y = 0.0;
+        let l_z = 0.0;
+        let l_sigma = 10;
+        let l_rho = 28;
+        let l_beta = 8/3;
+        
+        let l_points = [];
+        let l_maxPoints = 400;
+        let l_angle = 0;
+        let l_hovered = false;
+        let l_rotationSpeed = 0.005;
+
+        function resizeLorenz() {
+            lorenzCanvas.width = lorenzContainer.clientWidth;
+            lorenzCanvas.height = lorenzContainer.clientHeight;
+        }
+
+        lorenzContainer.addEventListener('mouseenter', () => {
+            l_hovered = true;
+            l_rotationSpeed = 0.02; // Rotate faster on hover
+        });
+        lorenzContainer.addEventListener('mouseleave', () => {
+            l_hovered = false;
+            l_rotationSpeed = 0.005;
+        });
+
+        // Pre-simulate to populate the attractor path
+        function preSimulateLorenz() {
+            let temp_x = 0.1;
+            let temp_y = 0.0;
+            let temp_z = 0.0;
+            let dt = 0.009;
+            for (let i = 0; i < 400; i++) {
+                let dx = l_sigma * (temp_y - temp_x) * dt;
+                let dy = (temp_x * (l_rho - temp_z) - temp_y) * dt;
+                let dz = (temp_x * temp_y - l_beta * temp_z) * dt;
+                temp_x += dx;
+                temp_y += dy;
+                temp_z += dz;
+                l_points.push({x: temp_x, y: temp_y, z: temp_z});
+            }
+        }
+
+        function updateLorenz() {
+            let dt = 0.009;
+            // Solve equations for new point
+            let dx = l_sigma * (l_y - l_x) * dt;
+            let dy = (l_x * (l_rho - l_z) - l_y) * dt;
+            let dz = (l_x * l_y - l_beta * l_z) * dt;
+            l_x += dx;
+            l_y += dy;
+            l_z += dz;
+
+            l_points.push({x: l_x, y: l_y, z: l_z});
+            if (l_points.length > l_maxPoints) {
+                l_points.shift();
+            }
+
+            l_angle += l_rotationSpeed;
+
+            // Clear
+            lorenzCtx.fillStyle = 'rgba(2, 6, 23, 0.4)';
+            lorenzCtx.fillRect(0, 0, lorenzCanvas.width, lorenzCanvas.height);
+
+            // Project 3D to 2D
+            let center_x = lorenzCanvas.width / 2;
+            let center_y = lorenzCanvas.height / 2 + 10;
+            let scale = 3.6;
+
+            if (l_points.length > 1) {
+                lorenzCtx.shadowBlur = 8;
+                lorenzCtx.shadowColor = '#10b981';
+                lorenzCtx.lineWidth = 1.5;
+                
+                lorenzCtx.beginPath();
+                for (let i = 0; i < l_points.length; i++) {
+                    let pt = l_points[i];
+                    
+                    // Rotate around Z and Y axis for 3D effect
+                    let rotX = pt.x * Math.cos(l_angle) - pt.y * Math.sin(l_angle);
+                    let rotY = pt.x * Math.sin(l_angle) + pt.y * Math.cos(l_angle);
+                    let rotZ = pt.z;
+
+                    // Projection mapping
+                    let px = center_x + rotX * scale;
+                    let py = center_y + (rotZ - 25) * scale * 0.95; // Offset Z to center the butterfly
+
+                    if (i === 0) {
+                        lorenzCtx.moveTo(px, py);
+                    } else {
+                        lorenzCtx.lineTo(px, py);
+                    }
+                }
+                
+                // Color gradient along the tail
+                let grad = lorenzCtx.createLinearGradient(0, 0, lorenzCanvas.width, 0);
+                grad.addColorStop(0, 'rgba(16, 185, 129, 0.3)');
+                grad.addColorStop(0.5, 'rgba(52, 211, 153, 0.9)');
+                grad.addColorStop(1, 'rgba(14, 165, 233, 0.3)');
+                lorenzCtx.strokeStyle = grad;
+                lorenzCtx.stroke();
+                
+                lorenzCtx.shadowBlur = 0; // reset
+            }
+        }
+
+        function loopLorenz() {
+            updateLorenz();
+            requestAnimationFrame(loopLorenz);
+        }
+
+        // --- 4. INICIALIZAR Y AJUSTAR ---
+        function initAll() {
+            resizeBg();
+            resizePendulum();
+            resizeLorenz();
+            
+            preSimulateLorenz();
+            
+            loopPendulum();
+            loopLorenz();
+            animateBg();
+        }
+
+        // Handle page resize
+        window.addEventListener('resize', () => {
+            resizePendulum();
+            resizeLorenz();
+        });
+
+        // Boot
+        window.onload = initAll;
+
+        // --- 5. EFECTO DE GLOW EN TARJETAS AL MOVER RATÓN ---
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // --- 6. LÓGICA DE CAROUSEL HORIZONTAL ---
+        const scrollContainer = document.getElementById('skills-scroll');
+        const prevBtn = document.getElementById('skills-prev');
+        const nextBtn = document.getElementById('skills-next');
+
+        if (scrollContainer && prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -340, behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: 340, behavior: 'smooth' });
+            });
+        }
     </script>
 </body>
 </html>
